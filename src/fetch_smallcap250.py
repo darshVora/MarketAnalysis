@@ -2,6 +2,8 @@ import s3fs
 import pandas as pd
 import os
 
+_DATA_DIR = os.path.join(os.path.dirname(__file__), "Data")
+
 def fetch_smallcap250():
     uri = "s3://desiquant/data/indices/nse/NIFTY SMALLCAP 250.csv"
     
@@ -23,7 +25,7 @@ def fetch_smallcap250():
         print("Data columns:", df.columns.tolist())
         print(df.head())
         
-        output_file = r"d:\Project\MarketAnalysis\src\Data\NIFTY_SMALLCAP_250_day.csv"
+        output_file = os.path.join(_DATA_DIR, "NIFTY_SMALLCAP_250_day.csv")
         df.to_csv(output_file, index=False)
         print(f"Data saved to {output_file}")
         

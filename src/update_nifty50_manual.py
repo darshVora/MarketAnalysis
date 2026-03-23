@@ -1,9 +1,11 @@
 import pandas as pd
 import os
 
+_DATA_DIR = os.path.join(os.path.dirname(__file__), "Data")
+
 def merge_manual_data():
-    existing_csv = r"d:\Project\MarketAnalysis\src\Data\NIFTY 50_day.csv"
-    manual_csv = r"d:\Project\MarketAnalysis\src\Data\nifty50_2000_2025\data.csv"
+    existing_csv = os.path.join(_DATA_DIR, "NIFTY 50_day.csv")
+    manual_csv = os.path.join(_DATA_DIR, "nifty50_2000_2025", "data.csv")
     
     print(f"Loading existing data: {existing_csv}")
     df_existing = pd.read_csv(existing_csv)

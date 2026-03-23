@@ -1,8 +1,11 @@
 import pandas as pd
+import os
+
+_DATA_DIR = os.path.join(os.path.dirname(__file__), "Data")
 
 def inspect_rates():
-    yield_path = r"d:\Project\MarketAnalysis\src\Data\Macro\Interest Rates on Central and State Government Dated Securities.xlsx"
-    repo_path = r"d:\Project\MarketAnalysis\src\Data\Macro\Major Monetary Policy Rates and Reserve Requirements - Bank Rate, LAF (Repo, Reverse Repo, SDF and MSF) Rates, CRR & SLR.xlsx"
+    yield_path = os.path.join(_DATA_DIR, "Macro", "Interest Rates on Central and State Government Dated Securities.xlsx")
+    repo_path = os.path.join(_DATA_DIR, "Macro", "Major Monetary Policy Rates and Reserve Requirements - Bank Rate, LAF (Repo, Reverse Repo, SDF and MSF) Rates, CRR & SLR.xlsx")
     
     with open('rates_inspect.txt', 'w') as f:
         f.write("--- 10-Year Yield ---\n")

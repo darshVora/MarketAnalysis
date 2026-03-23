@@ -2,6 +2,8 @@ import s3fs
 import os
 import re
 
+_DATA_DIR = os.path.join(os.path.dirname(__file__), "Data")
+
 def sanitize_filename(filename):
     # Windows invalid characters: < > : " / \ | ? *
     return re.sub(r'[<>:"/\\|?*]', '_', filename)
@@ -48,7 +50,7 @@ def download_aux_data():
     }
     
     fs = s3fs.S3FileSystem(**s3_params)
-    out_path = r'd:\Project\MarketAnalysis\src\Data\desiquant_aux'
+    out_path = os.path.join(_DATA_DIR, "desiquant_aux")
     os.makedirs(out_path, exist_ok=True)
     
     paths_to_download = [

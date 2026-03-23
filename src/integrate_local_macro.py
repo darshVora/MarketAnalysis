@@ -2,10 +2,12 @@ import pandas as pd
 import numpy as np
 import os
 
+_DATA_DIR = os.path.join(os.path.dirname(__file__), "Data")
+
 def integrate_macro():
-    cpi_path = r"d:\Project\MarketAnalysis\src\Data\Macro\Consumer Price Index - Annual Variation.xlsx"
-    gdp_path = r"d:\Project\MarketAnalysis\src\Data\Macro\Quarterly Estimates of Gross Domestic Product (At Constant Prices) New Series (Base _ 2011-12).xlsx"
-    macro_path = r"d:\Project\MarketAnalysis\src\Data\macro_data.csv"
+    cpi_path = os.path.join(_DATA_DIR, "Macro", "Consumer Price Index - Annual Variation.xlsx")
+    gdp_path = os.path.join(_DATA_DIR, "Macro", "Quarterly Estimates of Gross Domestic Product (At Constant Prices) New Series (Base _ 2011-12).xlsx")
+    macro_path = os.path.join(_DATA_DIR, "macro_data.csv")
     
     print("Parsing CPI Excel File...")
     # 1. Parse CPI

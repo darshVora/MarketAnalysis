@@ -1,8 +1,11 @@
 import pandas as pd
+import os
+
+_DATA_DIR = os.path.join(os.path.dirname(__file__), "Data")
 
 def inspect_local_files():
-    cpi_path = r"d:\Project\MarketAnalysis\src\Data\Macro\Consumer Price Index - Annual Variation.xlsx"
-    gdp_path = r"d:\Project\MarketAnalysis\src\Data\Macro\Quarterly Estimates of Gross Domestic Product (At Constant Prices) New Series (Base _ 2011-12).xlsx"
+    cpi_path = os.path.join(_DATA_DIR, "Macro", "Consumer Price Index - Annual Variation.xlsx")
+    gdp_path = os.path.join(_DATA_DIR, "Macro", "Quarterly Estimates of Gross Domestic Product (At Constant Prices) New Series (Base _ 2011-12).xlsx")
     
     print("--- CPI Data ---")
     try:

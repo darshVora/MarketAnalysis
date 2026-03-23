@@ -2,6 +2,8 @@ import yfinance as yf
 import pandas as pd
 import os
 
+_DATA_DIR = os.path.join(os.path.dirname(__file__), "Data")
+
 def fetch_macro_data():
     tickers = {
         'S&P500': '^GSPC',
@@ -51,7 +53,7 @@ def fetch_macro_data():
         elif 'index' in combined_df.columns:
             combined_df.rename(columns={'index': 'date'}, inplace=True)
             
-        out_path = r"d:\Project\MarketAnalysis\src\Data\macro_data.csv"
+        out_path = os.path.join(_DATA_DIR, "macro_data.csv")
         os.makedirs(os.path.dirname(out_path), exist_ok=True)
         combined_df.to_csv(out_path, index=False)
         

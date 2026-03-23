@@ -4,8 +4,10 @@ from datetime import date, timedelta
 import os
 import time
 
+_DATA_DIR = os.path.join(os.path.dirname(__file__), "Data")
+
 def update_nifty50_data():
-    csv_path = r"d:\Project\MarketAnalysis\src\Data\NIFTY 50_day.csv"
+    csv_path = os.path.join(_DATA_DIR, "NIFTY 50_day.csv")
     
     print(f"Loading existing data from {csv_path}...")
     df_existing = pd.read_csv(csv_path)

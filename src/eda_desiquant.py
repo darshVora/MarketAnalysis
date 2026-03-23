@@ -2,7 +2,7 @@ import os
 import pandas as pd
 
 def explore_data():
-    base_dir = r"d:\Project\MarketAnalysis\src\Data"
+    base_dir = os.path.join(os.path.dirname(__file__), "Data")
     
     # 1. Find a Result file
     result_files = []

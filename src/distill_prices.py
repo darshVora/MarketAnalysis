@@ -2,15 +2,17 @@ import polars as pl
 import os
 import time
 
+_DATA_DIR = os.path.join(os.path.dirname(__file__), "Data")
+
 def distill_prices():
-    bhav_dir = r"d:\Project\MarketAnalysis\src\Data\bhav_dump\bhav\nse\*.parquet*"
-    output_path = r"d:\Project\MarketAnalysis\src\Data\distilled_prices.parquet"
+    bhav_dir = os.path.join(_DATA_DIR, "bhav_dump", "bhav", "nse", "*.parquet*")
+    output_path = os.path.join(_DATA_DIR, "distilled_prices.parquet")
     
     print("Initiating sequential Polars extraction over 740+ Bhavcopy files...")
     start = time.time()
     
     import glob
-    files = glob.glob(r"d:\Project\MarketAnalysis\src\Data\bhav_dump\bhav\nse\*.parquet*")
+    files = glob.glob(os.path.join(_DATA_DIR, "bhav_dump", "bhav", "nse", "*.parquet*"))
     
     dataframes = []
     

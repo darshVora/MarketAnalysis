@@ -1,10 +1,13 @@
 import pandas as pd
 import numpy as np
+import os
+
+_DATA_DIR = os.path.join(os.path.dirname(__file__), "Data")
 
 def integrate_rates():
-    macro_path = r"d:\Project\MarketAnalysis\src\Data\macro_data.csv"
-    yield_path = r"d:\Project\MarketAnalysis\src\Data\Macro\Interest Rates on Central and State Government Dated Securities.xlsx"
-    repo_path = r"d:\Project\MarketAnalysis\src\Data\Macro\Major Monetary Policy Rates and Reserve Requirements - Bank Rate, LAF (Repo, Reverse Repo, SDF and MSF) Rates, CRR & SLR.xlsx"
+    macro_path = os.path.join(_DATA_DIR, "macro_data.csv")
+    yield_path = os.path.join(_DATA_DIR, "Macro", "Interest Rates on Central and State Government Dated Securities.xlsx")
+    repo_path = os.path.join(_DATA_DIR, "Macro", "Major Monetary Policy Rates and Reserve Requirements - Bank Rate, LAF (Repo, Reverse Repo, SDF and MSF) Rates, CRR & SLR.xlsx")
     
     print("Reading macro_data.csv...")
     macro_df = pd.read_csv(macro_path)

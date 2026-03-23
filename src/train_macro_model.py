@@ -5,9 +5,11 @@ from sklearn.metrics import classification_report, accuracy_score, confusion_mat
 import xgboost as xgb
 import os
 
+_DATA_DIR = os.path.join(os.path.dirname(__file__), "Data")
+
 def build_and_train_model():
-    nifty_path = r"d:\Project\MarketAnalysis\src\Data\NIFTY 50_day.csv"
-    macro_path = r"d:\Project\MarketAnalysis\src\Data\macro_data.csv"
+    nifty_path = os.path.join(_DATA_DIR, "NIFTY 50_day.csv")
+    macro_path = os.path.join(_DATA_DIR, "macro_data.csv")
     
     print("1. Loading datasets...")
     df_nifty = pd.read_csv(nifty_path)

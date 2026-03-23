@@ -1,0 +1,136 @@
+Generated: 2026-03-23 14:41:10
+
+======================================================================
+  HYPOTHESIS: Earnings Growth + Reasonable Valuation → Long-Term Alpha
+======================================================================
+
+Events after cleaning          : 5,278
+  with 3-year return available : 5,278
+  with 5-year return available : 4,986
+  date range                   : 2017-05-17 → 2023-11-06
+
+
+──────────────────────────────────────────────────────────────────────
+  Trailing P/E Distribution by Growth Quartile
+──────────────────────────────────────────────────────────────────────
+                 Median PE    Mean PE       Min         Max     N
+growth_quartile                                                  
+Q1 (Weak)        29.729812  37.935006  0.367495  149.174979  1320
+Q2 (Moderate)    29.587074  35.158531  0.349683  140.841984  1319
+Q3 (Good)        28.081344  34.301409  0.305288  146.348982  1319
+Q4 (Strong)      25.750371  33.488858  0.332876  149.366516  1320
+
+══════════════════════════════════════════════════════════════════════
+  Median forward_3yr_% by Growth Quartile × Trailing P/E Bucket
+══════════════════════════════════════════════════════════════════════
+growth_quartile        pe_bucket Median % Mean %   N
+      Q1 (Weak) <10 (Deep Value)    -1.9% +10.8% 184
+      Q1 (Weak)    10-15 (Value)    +2.4% +12.4% 131
+      Q1 (Weak)     15-25 (Fair)    +4.9%  +7.7% 248
+      Q1 (Weak)  25-40 (Premium)    +3.4%  +8.2% 267
+      Q1 (Weak)  >40 (Expensive)    +4.0%  +5.1% 490
+  Q2 (Moderate) <10 (Deep Value)    +2.8%  +5.0% 153
+  Q2 (Moderate)    10-15 (Value)    -1.8%  +5.7% 123
+  Q2 (Moderate)     15-25 (Fair)    +3.0%  +4.5% 279
+  Q2 (Moderate)  25-40 (Premium)    +4.4%  +4.2% 315
+  Q2 (Moderate)  >40 (Expensive)    +4.4%  +4.0% 449
+      Q3 (Good) <10 (Deep Value)    -1.0%  +6.9% 148
+      Q3 (Good)    10-15 (Value)    -2.6%  +7.2% 135
+      Q3 (Good)     15-25 (Fair)    +3.9%  +4.5% 301
+      Q3 (Good)  25-40 (Premium)    +2.2%  +3.6% 307
+      Q3 (Good)  >40 (Expensive)    +3.8%  +5.0% 428
+    Q4 (Strong) <10 (Deep Value)    -0.0%  +5.6% 243
+    Q4 (Strong)    10-15 (Value)    +2.0%  +9.4% 153
+    Q4 (Strong)     15-25 (Fair)    +0.5%  +5.2% 249
+    Q4 (Strong)  25-40 (Premium)    +4.2%  +7.5% 261
+    Q4 (Strong)  >40 (Expensive)    +1.2%  +5.8% 414
+
+──────────────────────────────────────────────────────────────────────
+  Growth Effect Test (3yr) — All P/E Levels Combined
+──────────────────────────────────────────────────────────────────────
+  Strong growth (Q4): N=1320 | Median=   +1.9% | Mean=   +6.4%
+  Weak   growth (Q1): N=1320 | Median=   +2.9% | Mean=   +7.7%
+
+  Mann-Whitney U (Q4 > Q1): U=864580, p=0.6323, Cohen's d=-0.031
+  ❌ Earnings growth alone is NOT a statistically significant predictor.
+
+──────────────────────────────────────────────────────────────────────
+  Hypothesis Test (3yr horizon) — Top-Growth Quartile Only
+  H0: Median returns are equal regardless of entry valuation
+  H1: Cheap P/E stocks deliver HIGHER long-term returns
+──────────────────────────────────────────────────────────────────────
+  Cheap  (PE < 15)          | N= 396 | Median=   +0.3% | Mean=   +7.0% | Std=45.9%
+  Fair (PE 15-25)           | N= 249 | Median=   +0.5% | Mean=   +5.2% | Std=31.1%
+  Expensive (PE > 25)       | N= 675 | Median=   +3.1% | Mean=   +6.4% | Std=36.1%
+
+  Mann-Whitney U (cheap > expensive): U=126741, p=0.9213
+  Cohen's d (effect size)           : +0.015  ← negligible
+  ❌ RESULT: Not statistically significant — valuation effect unclear at 5% level.
+
+  Kruskal-Wallis across all P/E buckets: H=3.38, p=0.4960
+
+══════════════════════════════════════════════════════════════════════
+  Median forward_5yr_% by Growth Quartile × Trailing P/E Bucket
+══════════════════════════════════════════════════════════════════════
+growth_quartile        pe_bucket Median % Mean %   N
+      Q1 (Weak) <10 (Deep Value)    +2.2% +18.3% 179
+      Q1 (Weak)    10-15 (Value)    +0.8% +18.9% 118
+      Q1 (Weak)     15-25 (Fair)    +6.5% +16.6% 238
+      Q1 (Weak)  25-40 (Premium)    +8.7% +21.5% 257
+      Q1 (Weak)  >40 (Expensive)    +6.3% +11.6% 449
+  Q2 (Moderate) <10 (Deep Value)    +0.5%  +4.8% 146
+  Q2 (Moderate)    10-15 (Value)    -6.1%  +7.3% 119
+  Q2 (Moderate)     15-25 (Fair)    +6.3% +14.7% 264
+  Q2 (Moderate)  25-40 (Premium)    +4.9%  +6.6% 292
+  Q2 (Moderate)  >40 (Expensive)    +7.4%  +8.0% 429
+      Q3 (Good) <10 (Deep Value)    -3.7%  +9.7% 140
+      Q3 (Good)    10-15 (Value)    -3.5%  +7.3% 127
+      Q3 (Good)     15-25 (Fair)    +8.2% +11.8% 280
+      Q3 (Good)  25-40 (Premium)    +4.6%  +5.8% 293
+      Q3 (Good)  >40 (Expensive)    +3.8%  +7.7% 401
+    Q4 (Strong) <10 (Deep Value)    -5.8%  +6.1% 236
+    Q4 (Strong)    10-15 (Value)    -3.8%  +9.7% 142
+    Q4 (Strong)     15-25 (Fair)    +4.8% +11.5% 234
+    Q4 (Strong)  25-40 (Premium)    +5.8% +12.0% 250
+    Q4 (Strong)  >40 (Expensive)    +5.6% +11.1% 392
+
+──────────────────────────────────────────────────────────────────────
+  Growth Effect Test (5yr) — All P/E Levels Combined
+──────────────────────────────────────────────────────────────────────
+  Strong growth (Q4): N=1254 | Median=   +2.9% | Mean=  +10.2%
+  Weak   growth (Q1): N=1241 | Median=   +6.4% | Mean=  +16.3%
+
+  Mann-Whitney U (Q4 > Q1): U=747546, p=0.9553, Cohen's d=-0.104
+  ❌ Earnings growth alone is NOT a statistically significant predictor.
+
+──────────────────────────────────────────────────────────────────────
+  Hypothesis Test (5yr horizon) — Top-Growth Quartile Only
+  H0: Median returns are equal regardless of entry valuation
+  H1: Cheap P/E stocks deliver HIGHER long-term returns
+──────────────────────────────────────────────────────────────────────
+  Cheap  (PE < 15)          | N= 378 | Median=   -3.9% | Mean=   +7.5% | Std=52.7%
+  Fair (PE 15-25)           | N= 234 | Median=   +4.8% | Mean=  +11.5% | Std=43.3%
+  Expensive (PE > 25)       | N= 642 | Median=   +5.8% | Mean=  +11.4% | Std=47.2%
+
+  Mann-Whitney U (cheap > expensive): U=105424, p=0.9998
+  Cohen's d (effect size)           : -0.079  ← negligible
+  ❌ RESULT: Not statistically significant — valuation effect unclear at 5% level.
+
+  Kruskal-Wallis across all P/E buckets: H=13.63, p=0.0086
+
+══════════════════════════════════════════════════════════════════════
+  SUMMARY
+══════════════════════════════════════════════════════════════════════
+
+  Step 1: Run compile_earnings_dataset.py   → builds earnings_valuation_data.parquet
+  Step 2: Run train_earnings_model.py       → XGBoost validation of factor importances
+  Step 3: Run test_valuation_hypothesis.py  → this script (statistical hypothesis test)
+
+  Interpret results:
+    • If Q4 (Strong growth) + 'Cheap' P/E bucket shows the highest median 3/5yr return
+      AND the Mann-Whitney test is significant → hypothesis CONFIRMED.
+    • If growth alone drives returns regardless of P/E → valuation entry point is less
+      critical; focus on identifying the growth inflection early.
+    • High Cohen's d (>0.5) means the effect is practically meaningful, not just
+      statistically significant on a large sample.
+

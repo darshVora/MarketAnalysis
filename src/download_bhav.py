@@ -1,6 +1,8 @@
 import s3fs
 import os
 
+_DATA_DIR = os.path.join(os.path.dirname(__file__), "Data")
+
 def download_bhav():
     s3_params = {
         "endpoint_url": "https://cbabd13f6c54798a9ec05df5b8070a6e.r2.cloudflarestorage.com",
@@ -13,7 +15,7 @@ def download_bhav():
     
     fs = s3fs.S3FileSystem(**s3_params)
     in_path = 's3://desiquant/data/bhav'
-    out_path = r'd:\Project\MarketAnalysis\src\Data\bhav_dump'
+    out_path = os.path.join(_DATA_DIR, "bhav_dump")
     
     print(f"Calculating size of {in_path}...")
     try:
